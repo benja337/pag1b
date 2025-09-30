@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7fafc;--text:#2d3748;--sub:#718096;--line:#e2e8f0;
+    --panel:#ffffff;--soft:#edf2f7;--accent:#3182ce;--accent-700:#2b6cb0;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
+  .wrap{max-width:960px;margin:0 auto;padding:28px}
+  .brand{font-size:36px;font-weight:700;margin-bottom:10px}
+  .blob{
+    background:linear-gradient(180deg,#ffffff 0%,#f4f8ff 100%);
+    border:1px solid var(--line);
+    border-radius:28px;
+    padding:22px;
+  }
+  .card{
+    background:linear-gradient(180deg,#eef4ff 0%,#f8fbff 100%);
+    border:1px solid #d1e3ff;
+    border-radius:18px;
+    padding:18px;
+  }
+  .card h2{margin:0 0 14px 0;font-size:20px;font-weight:700}
+  .input-mock{
+    border:1px solid #cbd5e0;
+    background:#fff;
+    border-radius:10px;
+    height:38px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:10px;
+    color:#4a5568;
+    font-size:14px;
+    text-align:center;
+  }
+  .hint{font-size:12px;color:#718096;margin:10px 0}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    height:42px;padding:0 18px;border-radius:10px;
+    background:var(--accent);color:#fff;border:1px solid var(--accent-700);
+    font-weight:600
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">La Nonna</div>
+
+    <div class="blob">
+      <div class="card">
+        <h2>Crear cuenta</h2>
+        <div class="input-mock">Email: ana@example.com</div>
+        <div class="input-mock">Contraseña: Clave2025</div>
+        <div class="hint">Política: 8+ caracteres, mayúscula, minúscula, número.</div>
+        <button class="btn" type="button">Crear cuenta</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
