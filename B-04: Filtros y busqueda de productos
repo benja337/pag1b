@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7fafc;--text:#2d3748;--sub:#718096;--line:#e2e8f0;
+    --panel:#ffffff;--card:#f7faff;--cardstroke:#d1e3ff;
+    --accent:#3182ce;--accent-700:#2b6cb0;--chip:#edf2f7;--chipbr:#cbd5e0;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
+  .wrap{max-width:1200px;margin:0 auto;padding:28px}
+  .brand{font-size:36px;font-weight:700;margin-bottom:10px}
+  .blob{background:linear-gradient(180deg,#ffffff 0%,#f4f8ff 100%);border:1px solid var(--line);border-radius:28px;padding:22px}
+  .layout{display:grid;grid-template-columns:320px 1fr 380px;gap:20px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;min-height:180px}
+  .card{background:var(--card);border:1px solid var(--cardstroke);border-radius:16px;margin:16px;padding:16px}
+  .h2{font-size:20px;font-weight:700;margin:0 0 12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:8px 12px;border-radius:999px;background:var(--chip);border:1px solid var(--chipbr);font-size:13px;color:var(--text);text-decoration:none}
+  .chip.active{background:#e1efff;border-color:#94b8ff;color:#1a365d}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .product{border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px}
+  .product .name{font-weight:600;margin-bottom:6px}
+  .product .sub{font-size:12px;color:var(--sub)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 14px;border-radius:10px;background:var(--accent);color:#fff;border:1px solid var(--accent-700);font-weight:600}
+  .detail{border:1px dashed var(--line);border-radius:12px;margin:16px;padding:16px;background:#fff;min-height:220px;text-align:center;color:var(--sub)}
+  .menu{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:20px}
+  .menu h3{margin:0 0 10px;font-size:14px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+  .menu a{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--text);padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:#fff}
+  .menu a .pill{font-size:12px;color:#1a365d;background:#bee3f8;border:1px solid #90cdf4;border-radius:999px;padding:2px 8px}
+  @media (max-width:1100px){.layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">La Nonna</div>
+
+    <div class="blob">
+      <div class="layout">
+        <aside class="panel">
+          <div class="card">
+            <div class="h2">Filtros</div>
+            <div class="chips" style="margin-bottom:12px">
+              <span class="chip active">Lasañas</span>
+              <span class="chip">Ravioles</span>
+              <span class="chip">Ñoquis</span>
+              <span class="chip">Salsas</span>
+            </div>
+            <div class="h2" style="font-size:14px;margin-top:8px;color:#4a5568">Ingredientes</div>
+            <div class="chips">
+              <span class="chip active">Carne</span>
+              <span class="chip">Queso</span>
+              <span class="chip">Espinaca</span>
+              <span class="chip">Mixto</span>
+            </div>
+          </div>
+
+          <div class="menu">
+            <h3>Menú</h3>
+            <a href="#" aria-disabled="true"><span>Vista Lasañas</span><span class="pill">bloqueado</span></a>
+            <a href="#" aria-disabled="true"><span>Vista Ravioles + Carne</span><span class="pill">bloqueado</span></a>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <div class="card">
+            <div class="h2">Catálogo</div>
+            <div class="grid">
+              <div class="product">
+                <div class="name">Lasaña de carne • 600g</div>
+                <div class="sub">$8.990 · En stock</div>
+                <div style="margin-top:10px"><button class="btn" type="button">Ver detalle</button></div>
+              </div>
+              <div class="product">
+                <div class="name">Lasaña boloñesa • 600g</div>
+                <div class="sub">$9.490 · En stock</div>
+                <div style="margin-top:10px"><button class="btn" type="button">Ver detalle</button></div>
+              </div>
+              <div class="product">
+                <div class="name">Lasaña pollo y verduras • 600g</div>
+                <div class="sub">$8.490 · Pocas unidades</div>
+                <div style="margin-top:10px"><button class="btn" type="button">Ver detalle</button></div>
+              </div>
+              <div class="product">
+                <div class="name">Lasaña 4 quesos • 600g</div>
+                <div class="sub">$8.990 · En stock</div>
+                <div style="margin-top:10px"><button class="btn" type="button">Ver detalle</button></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <div class="card">
+            <div class="h2">Detalle</div>
+            <div class="detail">Selecciona un producto para ver su información</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
