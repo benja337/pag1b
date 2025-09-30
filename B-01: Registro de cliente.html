@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Nonna · Registro de cliente</title>
+  <style>
+    :root{
+      --bg:#F7FAFC; --card:#FFFFFF; --muted:#718096; --border:#E2E8F0;
+      --brand:#2D3748; --primary:#3182CE; --primary-dark:#2B6CB0;
+      --ok-bg:#E6FFFA; --ok-border:#81E6D9; --ok-text:#234E52;
+      --err-bg:#FFF5F5; --err-border:#FC8181; --err-text:#742A2A;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--brand);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    .wrap{max-width:960px;margin:auto;padding:24px}
+    .topbar{background:#EDF2F7;border:1px solid #CBD5E0;border-radius:12px;padding:14px 16px;margin-bottom:20px}
+    .url{color:var(--muted);font-size:14px}
+    .brand{font-size:36px;font-weight:800;margin:8px 0 16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+    .title{font-size:22px;font-weight:700;margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    label{display:block;font-size:14px;margin-bottom:6px}
+    input[type="email"],input[type="password"]{
+      width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:#fff
+    }
+    .hint{font-size:12px;color:var(--muted)}
+    .btn{appearance:none;border:0;border-radius:12px;background:var(--primary);color:#fff;padding:12px 16px;font-weight:600;cursor:pointer}
+    .btn:focus{outline:2px solid var(--primary-dark);outline-offset:2px}
+    .msg{border:1px solid transparent;border-radius:12px;padding:12px 14px;font-size:14px}
+    .msg--ok{background:var(--ok-bg);border-color:var(--ok-border);color:var(--ok-text)}
+    .msg--err{background:var(--err-bg);border-color:var(--err-border);color:var(--err-text)}
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
+    .spacer{height:8px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="url">https://www.lanonna.cl/registro</div>
+    </header>
+
+    <h1 class="brand">La Nonna</h1>
+
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title" class="title">Crear cuenta</h2>
+
+      <!-- Mensajes de estado (muestra/oculta con JS según corresponda) -->
+      <!-- Éxito -->
+      <div class="msg msg--ok" role="alert" aria-live="polite" hidden>
+        Cuenta creada correctamente. Redirigiendo al área privada…
+      </div>
+      <!-- Error: email en uso -->
+      <div class="msg msg--err" role="alert" aria-live="assertive" hidden>
+        El email ya está en uso.
+      </div>
+      <!-- Error: contraseña débil -->
+      <div class="msg msg--err" role="alert" aria-live="assertive" hidden>
+        La contraseña no cumple los requisitos.
+      </div>
+
+      <form class="grid" autocomplete="on" novalidate>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="ana@example.com" required />
+        </div>
+
+        <div>
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required />
+          <div class="hint">Mín. 8 caracteres, incluye mayúscula, minúscula y número.</div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div>
+          <button class="btn" type="submit">Crear cuenta</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Contenedor del “área privada” (solo marcador de posición para el flujo exitoso) -->
+    <section class="card" aria-hidden="true" hidden>
+      <h2 class="title">Área privada</h2>
+      <p>Bienvenida/o, <strong id="user-email">ana@example.com</strong></p>
+    </section>
+  </main>
+
+  <!--
+    JS (a implementar por ti):
+    - onsubmit: validar campos
+    - simular/llamar API:
+        • éxito → mostrar msg--ok y redirigir/mostrar área privada
+        • email duplicado → mostrar "El email ya está en uso"
+        • contraseña débil → mostrar "La contraseña no cumple los requisitos"
+    - accesibilidad: mover el foco al .msg visible
+  -->
+</body>
+</html>
