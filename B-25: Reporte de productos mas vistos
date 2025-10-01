@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7fafc;--text:#2d3748;--sub:#718096;--line:#e2e8f0;
+    --panel:#ffffff;--card:#f7faff;--cardstroke:#d1e3ff;
+    --accent:#3182ce;--accent-700:#2b6cb0;
+    --mutedbg:#edf2f7;--mutedbr:#cbd5e0;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
+  .wrap{max-width:1200px;margin:0 auto;padding:28px}
+  .brand{font-size:36px;font-weight:700;margin-bottom:10px}
+  .blob{background:linear-gradient(180deg,#ffffff 0%,#f4f8ff 100%);border:1px solid var(--line);border-radius:28px;padding:22px}
+  .layout{display:grid;grid-template-columns:300px 1fr 380px;gap:20px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}
+
+  .menu{padding:16px}
+  .menu h3{margin:0 0 10px;font-size:14px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+  .menu a{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--text);padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:#fff}
+  .pill{font-size:12px;color:#1a365d;background:#bee3f8;border:1px solid #90cdf4;border-radius:999px;padding:2px 8px}
+
+  .card{background:var(--card);border:1px solid var(--cardstroke);border-radius:16px;margin:16px;padding:16px}
+  .h2{font-size:20px;font-weight:700;margin:0 0 12px}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+  .field{border:1px solid #cbd5e0;background:#fff;border-radius:10px;height:42px;display:flex;align-items:center;justify-content:center;color:#4a5568;font-size:14px;text-align:center;margin-bottom:8px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;height:42px;padding:0 18px;border-radius:10px;background:var(--accent);color:#fff;border:1px solid var(--accent-700);font-weight:600}
+
+  .table{border:1px dashed var(--line);border-radius:12px;background:#fff;padding:12px;min-height:220px;display:flex;align-items:center;justify-content:center;color:var(--sub)}
+  .list{display:grid;gap:10px}
+  .row{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px}
+  .muted{background:var(--mutedbg);border:1px solid var(--mutedbr);color:#4a5568;border-radius:10px;padding:12px;text-align:center}
+
+  @media (max-width:1100px){
+    .layout{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">La Nonna</div>
+
+    <div class="blob">
+      <div class="layout">
+
+        <aside class="panel menu">
+          <h3>Menú</h3>
+          <a href="#" aria-disabled="true"><span>Más vistos</span><span class="pill">bloqueado</span></a>
+          <a href="#" aria-disabled="true"><span>Parámetros</span><span class="pill">bloqueado</span></a>
+          <a href="#" aria-disabled="true"><span>Sin datos</span><span class="pill">bloqueado</span></a>
+        </aside>
+
+        <section class="panel">
+          <div class="card">
+            <div class="h2">Parámetros</div>
+            <div class="grid">
+              <div class="box">
+                <div class="h2" style="font-size:16px;margin:0 0 8px">Rango de fechas</div>
+                <div class="field">Desde</div>
+                <div class="field">Hasta</div>
+              </div>
+              <div class="box">
+                <div class="h2" style="font-size:16px;margin:0 0 8px">Agrupación</div>
+                <div class="field">Por producto</div>
+                <div class="field">Orden: Desc</div>
+              </div>
+            </div>
+            <div style="margin-top:12px">
+              <button class="btn" type="button">Generar reporte</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="h2">Resultado</div>
+            <div class="table">Listado de productos con mayor número de vistas</div>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <div class="card">
+            <div class="h2">Estado</div>
+            <div class="list">
+              <div class="row"><span>Reporte</span><span>Generado</span></div>
+              <div class="row"><span>Disponibilidad</span><span>OK</span></div>
+              <div class="muted" style="margin-top:10px">No hay datos disponibles</div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
