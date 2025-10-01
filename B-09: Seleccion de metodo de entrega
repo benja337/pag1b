@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Nonna</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7fafc;--text:#2d3748;--sub:#718096;--line:#e2e8f0;
+    --panel:#ffffff;--card:#f7faff;--cardstroke:#d1e3ff;
+    --accent:#3182ce;--accent-700:#2b6cb0;
+    --okbg:#e6fffa;--okbr:#81e6d9;--oktx:#234e52;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text)}
+  .wrap{max-width:1200px;margin:0 auto;padding:28px}
+  .brand{font-size:36px;font-weight:700;margin-bottom:10px}
+  .blob{background:linear-gradient(180deg,#ffffff 0%,#f4f8ff 100%);border:1px solid var(--line);border-radius:28px;padding:22px}
+  .layout{display:grid;grid-template-columns:300px 1fr 380px;gap:20px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}
+  .card{background:var(--card);border:1px solid var(--cardstroke);border-radius:16px;margin:16px;padding:16px}
+  .h2{font-size:20px;font-weight:700;margin:0 0 12px}
+  .menu{padding:16px}
+  .menu h3{margin:0 0 10px;font-size:14px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+  .menu a{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--text);padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:#fff}
+  .pill{font-size:12px;color:#1a365d;background:#bee3f8;border:1px solid #90cdf4;border-radius:999px;padding:2px 8px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:8px 12px;border-radius:999px;background:#edf2f7;border:1px solid #cbd5e0;font-size:13px}
+  .chip.active{background:#e1efff;border-color:#94b8ff;color:#1a365d}
+  .input-mock{border:1px solid #cbd5e0;background:#fff;border-radius:10px;height:42px;display:flex;align-items:center;justify-content:center;color:#4a5568;font-size:14px;text-align:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;height:42px;padding:0 18px;border-radius:10px;background:var(--accent);color:#fff;border:1px solid var(--accent-700);font-weight:600}
+  .status .ok{background:var(--okbg);border:1px solid var(--okbr);color:var(--oktx);border-radius:10px;padding:12px;margin-bottom:10px;text-align:center}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:1100px){
+    .layout{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">La Nonna</div>
+
+    <div class="blob">
+      <div class="layout">
+        <aside class="panel menu">
+          <h3>Menú</h3>
+          <a href="#" aria-disabled="true"><span>Retiro en tienda</span><span class="pill">bloqueado</span></a>
+          <a href="#" aria-disabled="true"><span>Despacho</span><span class="pill">bloqueado</span></a>
+          <a href="#" aria-disabled="true"><span>Resumen</span><span class="pill">bloqueado</span></a>
+        </aside>
+
+        <section class="panel">
+          <div class="card">
+            <div class="h2">Opciones de entrega</div>
+            <div class="chips" style="margin-bottom:12px">
+              <span class="chip active">Retiro en tienda</span>
+              <span class="chip">Despacho</span>
+            </div>
+
+            <div class="grid">
+              <div class="card" style="background:#fff;border-color:var(--line)">
+                <div class="h2">Ventana horaria</div>
+                <div class="input-mock">Seleccionar horario</div>
+                <div style="margin-top:12px"><button class="btn" type="button">Confirmar</button></div>
+              </div>
+
+              <div class="card" style="background:#fff;border-color:var(--line)">
+                <div class="h2">Dirección</div>
+                <div class="input-mock">Ingresar dirección</div>
+                <div style="margin-top:12px"><button class="btn" type="button">Calcular envío</button></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <div class="card status">
+            <div class="h2">Estado</div>
+            <div class="ok">Horario confirmado</div>
+            <div class="ok">Costo y tiempo estimado</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
